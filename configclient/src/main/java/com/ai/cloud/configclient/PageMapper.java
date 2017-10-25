@@ -14,10 +14,14 @@ public class PageMapper {
 	@Value("${application.version}")
 	String applicationVersion;
 	
+	@Value("${profile}")
+	String profile;
 	@RequestMapping("/")
 	String home(){
 		return "Application Name:"+applicationName
-				+"\n"
-				+"Application Version:"+applicationVersion;
+				+System.lineSeparator()
+				+"Application Version:"+applicationVersion
+				+System.lineSeparator()
+				+"Profile:"+profile;
 	}
 }
