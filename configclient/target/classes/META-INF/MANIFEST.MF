@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: configclient
+Implementation-Version: 17.10.24
+Built-By: OTTER
+Implementation-Vendor-Id: com.ai.cloud
+Build-Jdk: 1.8.0_151
+Implementation-URL: http://projects.spring.io/spring-boot/configclient
+ /
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
