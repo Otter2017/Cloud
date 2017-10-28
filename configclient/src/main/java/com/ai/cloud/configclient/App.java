@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class App {	
+	
 	@Value("${spring.application.name}")
 	String applicationName;
 	
@@ -21,6 +22,7 @@ public class App {
 	
 	@Value("${profile}")
 	String profile;
+	
 	@RequestMapping("/")
 	String home(){
 		return "Application Name:"+applicationName
