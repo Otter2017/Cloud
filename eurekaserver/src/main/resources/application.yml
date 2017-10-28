@@ -1,0 +1,18 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost/eureka/
+  server:
+    enable-self-preservation: true
+
+security:
+  basic:
+    enable: true
+  user:
+    name: root
+    password: eureka
