@@ -5,17 +5,17 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/otter2017/Config  
+          uri: "https://github.com/otter2017/Config" 
           
 server:
-  port: 8000
+  port: 9000
   
 version: 17.10.24
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://root:eureka@localhost/eureka/
+      defaultZone: "http://root:eureka@localhost:8000/eureka/"
     healthcheck:
       enable: true
   instance:
