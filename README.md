@@ -3,11 +3,14 @@
 
 1.服务的注册与发现
 Spring Cloud Netflix Eureka
-Port：80
+Port：8000-8005
 
 2.负载均衡
 Spring Cloud Netflix Ribbon
 
 3.配置中心
 Spring Cloud Config
-Port:8000
+Port:9000-9005
+
+4.服务网关 Spring Cloud Netfilx Zuul
+Port:80-85
