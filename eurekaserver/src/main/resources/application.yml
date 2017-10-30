@@ -1,21 +1,56 @@
+spring:
+  application:
+    name: EurekaServer
+
+#security:
+#  basic:
+#    enable: true
+#  user:
+#    name: root
+#    password: eureka
+---
+spring:
+  profiles: default
+
 server:
   port: 8000
 
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
     serviceUrl:
-      defaultZone: "http://localhost:8000/eureka/"
+      defaultZone: "http://localhost:8001/eureka/,http://localhost:8002/eureka/"
   server:
     enable-self-preservation: true
   instance:
     prefer-ip-address: true
-    ip-address: 127.0.0.1
 
-security:
-  basic:
-    enable: true
-  user:
-    name: root
-    password: eureka
+---
+spring:
+  profiles: eureka1
+
+server:
+  port: 8001
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8000/eureka/,http://localhost:8002/eureka/"
+  server:
+    enable-self-preservation: true
+  instance:
+    prefer-ip-address: true
+---
+spring:
+  profiles: eureka2
+
+server:
+  port: 8002
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8000/eureka/,http://localhost:8001/eureka/"
+  server:
+    enable-self-preservation: true
+  instance:
+    prefer-ip-address: true

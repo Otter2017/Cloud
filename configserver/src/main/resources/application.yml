@@ -1,30 +1,45 @@
+#ConfigServer setting
 spring:
   application:
-    name: SpringCloudConfigServer
+    name: ConfigServer
   cloud:
     config:
       server:
         git:
           uri: "https://github.com/otter2017/Config" 
-          
-server:
-  port: 9000
-  
+           
 version: 17.10.24
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: "http://root:eureka@localhost:8000/eureka/"
+      defaultZone: "http://localhost:8000/eureka/"
     healthcheck:
       enable: true
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
 
-security:
-  basic:
-    enable: true
-  user:
-    name: root
-    password: configserver
+#security:
+#  basic:
+#    enable: true
+#  user:
+#    name: root
+#    password: configserver
+
+---
+spring:
+  profiles: default
+server:
+  port: 9000
+---
+spring:
+  profiles: configserver1
+server:
+  port: 9001
+---
+spring:
+  profiles: configserver2
+server:
+  port: 9002
+    
