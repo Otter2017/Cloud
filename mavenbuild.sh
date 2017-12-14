@@ -1,6 +1,6 @@
 basepath=$(pwd)
 
-#mvn package
+mvn package
 
 if [ ! -d $basepath/jars ]; then mkdir $basepath/jars ; fi
 
