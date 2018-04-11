@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: ConfigClient
+
+
+
+---
+spring:
+  profiles: default
+
+server:
+  port: 8100
+
+application:
+  version: 17.10.24
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://192.168.27.128:8000/eureka/"
+    healthcheck:
+      enable: true
+  #显示IP还是机器名
+  instance:
+    prefer-ip-address: true
+---
+spring:
+  profiles: dev
+server:
+  port: 8101
+application:
+  version: 18.10.24
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://192.168.27.129:8000/eureka/"
+    healthcheck:
+          enable: true
+  #显示IP还是机器名
+  instance:
+      prefer-ip-address: false

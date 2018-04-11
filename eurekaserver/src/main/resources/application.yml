@@ -18,39 +18,27 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: "http://localhost:8001/eureka/,http://localhost:8002/eureka/"
+      defaultZone: "http://192.168.27.129:8000/eureka/"
   server:
-    enable-self-preservation: true
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 100000
   instance:
     prefer-ip-address: true
 
+
 ---
 spring:
-  profiles: eureka1
+  profiles: sub
 
 server:
-  port: 8001
+  port: 8000
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: "http://localhost:8000/eureka/,http://localhost:8002/eureka/"
+      defaultZone: "http://192.168.27.128:8000/eureka/"
   server:
-    enable-self-preservation: true
-  instance:
-    prefer-ip-address: true
----
-spring:
-  profiles: eureka2
-
-server:
-  port: 8002
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: "http://localhost:8000/eureka/,http://localhost:8001/eureka/"
-  server:
-    enable-self-preservation: true
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 100000
   instance:
     prefer-ip-address: true

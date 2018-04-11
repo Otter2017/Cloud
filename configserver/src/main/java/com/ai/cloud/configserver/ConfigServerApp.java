@@ -1,7 +1,5 @@
 package com.ai.cloud.configserver;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,21 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableEurekaClient
 public class ConfigServerApp {
-	@Value("${spring.application.name}")
-	String applicationName="Config Server";
-	
-	@RequestMapping("/")
-	String home(){
-		return "Welcome to "+applicationName;
-	}
-	
-	@RequestMapping("/time")
-	String time(){
-		return new Date().toString();
-	}
-	
-	public static void main(String[] args) {
-		SpringApplication.run(ConfigServerApp.class, args);
-	}
+    @Value("${spring.application.name}")
+    String applicationName = "Config Server";
+
+    @RequestMapping("/")
+    String home() {
+        return "Welcome to " + applicationName;
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(ConfigServerApp.class, args);
+    }
 
 }
