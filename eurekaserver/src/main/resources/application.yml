@@ -25,6 +25,8 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: localhost
+    #重新刷新服务状态间隔(秒)
+    leaseRenewalIntervalInSeconds: 10
 
 
 ---
