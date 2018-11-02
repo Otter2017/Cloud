@@ -18,12 +18,13 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: "http://192.168.27.129:8000/eureka/"
+      defaultZone: "http://${eureka.instance.hostname}:${server.port}/eureka/"
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 100000
   instance:
     prefer-ip-address: true
+    hostname: localhost
 
 
 ---
