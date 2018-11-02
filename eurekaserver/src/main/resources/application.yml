@@ -24,7 +24,8 @@ eureka:
     eviction-interval-timer-in-ms: 100000
   instance:
     prefer-ip-address: true
-    hostname: localhost
+    #设置host本地地址执行下面的域名
+    hostname: cloud.medcaptain.com
     #重新刷新服务状态间隔(秒)
     leaseRenewalIntervalInSeconds: 10
 
